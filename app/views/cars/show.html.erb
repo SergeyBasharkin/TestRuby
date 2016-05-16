@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @car.name %>
+</p>
+
+<p>
+  <strong>Gos num:</strong>
+  <%= @car.gos_num %>
+</p>
+
+<p>
+  <strong>Ptc:</strong>
+  <%= @car.ptc %>
+</p>
+
+<p>
+  <strong>Pictures:</strong>
+  <% @car.pictures.each do |picture|  %>
+    <%=image_tag picture.url%>
+  <%end%>
+</p>
+
+<p>
+  <strong>Date ptc:</strong>
+  <%= @car.date_ptc %>
+</p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

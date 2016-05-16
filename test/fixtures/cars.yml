@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gos_num: MyString
+  ptc: MyString
+  pictures: 
+  date_ptc: 2016-05-16
+
+two:
+  name: MyString
+  gos_num: MyString
+  ptc: MyString
+  pictures: 
+  date_ptc: 2016-05-16

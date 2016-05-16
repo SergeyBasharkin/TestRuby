@@ -1,0 +1,39 @@
+<%= form_for(@car, html: { multipart: true }) do |f| %>
+  <% if @car.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+
+      <ul>
+      <% @car.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :gos_num %><br>
+    <%= f.text_field :gos_num %>
+  </div>
+  <div class="field">
+    <%= f.label :ptc %><br>
+    <%= f.text_field :ptc %>
+  </div>
+    <%= f.label :pictures %>
+    <% @car.pictures.each do |picture|  %>
+        <%=image_tag picture.url if picture%>
+    <%end%>
+    <%= f.file_field :pictures, multiple: true, accept: "image/jpeg, image/jpg, image/gif, image/png" %>
+    <%= f.hidden_field :pictures_cache %>
+    <div class="field">
+    <%= f.label :date_ptc %><br>
+    <%= f.date_select :date_ptc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
